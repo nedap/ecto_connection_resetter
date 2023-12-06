@@ -35,7 +35,7 @@ defmodule EctoConnectionResetter.MixProject do
   defp deps do
     [
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:db_connection, "~> 2.4.1"},
+      {:db_connection, "~> 2.4"},
       {:ecto_sql, "~> 3.4"},
       {:credo, "~> 1.6.1", only: [:dev, :test], runtime: false},
       {:dialyzex, "~> 1.3.0", only: [:dev], runtime: false},
