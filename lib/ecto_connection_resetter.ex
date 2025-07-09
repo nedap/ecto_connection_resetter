@@ -63,9 +63,9 @@ defmodule EctoConnectionResetter do
     {:ok, args}
   rescue
     e ->
-      Logger.warn("EctoConnectionResetter failed >> ")
-      Logger.warn(e)
-      Logger.warn("EctoConnectionResetter failed << ")
+      Logger.warning("EctoConnectionResetter failed >> ")
+      Logger.warning(e)
+      Logger.warning("EctoConnectionResetter failed << ")
       {:ok, args}
   end
 
@@ -73,9 +73,9 @@ defmodule EctoConnectionResetter do
     throw("You need cycle_mins, repo and close_interval parameters")
   catch
     message ->
-      Logger.warn("EctoConnectionResetter failed >> ")
-      Logger.warn(message)
-      Logger.warn("EctoConnectionResetter failed << ")
+      Logger.warning("EctoConnectionResetter failed >> ")
+      Logger.warning(message)
+      Logger.warning("EctoConnectionResetter failed << ")
       {:error, :missing_params}
   end
 
@@ -99,9 +99,9 @@ defmodule EctoConnectionResetter do
     {:noreply, state}
   rescue
     e ->
-      Logger.warn("EctoConnectionResetter failed >> ")
-      Logger.warn(e)
-      Logger.warn("EctoConnectionResetter failed << ")
+      Logger.warning("EctoConnectionResetter failed >> ")
+      Logger.warning(e)
+      Logger.warning("EctoConnectionResetter failed << ")
       {:noreply, state}
   end
 
@@ -118,7 +118,7 @@ defmodule EctoConnectionResetter do
   end
 
   defp maybe_log_info(message, %{verbose: true} = args) do
-    Logger.info("#{process_name(args)} *** #{message}")
+    Logger.warning("EctoConnectionResetter #{process_name(args)} *** #{message}")
   end
 
   defp maybe_log_info(_message, _args),
